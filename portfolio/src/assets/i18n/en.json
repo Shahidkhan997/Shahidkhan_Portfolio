@@ -1,0 +1,163 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "ABOUT": "About",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "FOOTER": {
+    "DESCRIPTION": "Building modern web applications with passion and precision.",
+    "QUICK_LINKS": "Quick Links",
+    "CONNECT": "Connect",
+    "RIGHTS": "All rights reserved."
+  },
+  "HOME": {
+    "TITLE": "Hi, I'm Muhammad Shahid Iqbal",
+    "SUBTITLE": "Full Stack Developer passionate about creating innovative web solutions",
+    "VIEW_WORK": "View My Work",
+    "GET_IN_TOUCH": "Get In Touch",
+    "LEARN_MORE": "Learn More",
+    "VIEW_PROJECT": "View Project",
+    "VIEW_ALL_PROJECTS": "View All Projects",
+    "VIEW_ALL_SKILLS": "View All Skills",
+    "ABOUT_PREVIEW": {
+      "TITLE": "About Me",
+      "DESCRIPTION": "I'm a passionate full stack developer with 5+ years of experience creating modern web applications. I love turning complex problems into simple, beautiful designs."
+    },
+    "STATS": {
+      "YEARS": "Years Experience",
+      "PROJECTS": "Projects Completed",
+      "TECHNOLOGIES": "Technologies Mastered",
+      "DEDICATION": "Client Satisfaction"
+    },
+    "FEATURED_PROJECTS": {
+      "TITLE": "Featured Projects",
+      "DESCRIPTION": "Here are some of my recent projects that showcase my skills and passion for development.",
+      "PROJECT1": {
+        "TITLE": "E-Commerce Platform",
+        "DESCRIPTION": "A full-featured e-commerce platform with modern design and seamless user experience."
+      }
+    },
+    "SKILLS_PREVIEW": {
+      "TITLE": "Technical Skills",
+      "DESCRIPTION": "I work with a variety of technologies to bring ideas to life."
+    }
+  },
+  "ABOUT": {
+    "TITLE": "About Me",
+    "SUBTITLE": "Get to know more about my journey, values, and what drives me as a developer",
+    "WHO_I_AM": {
+      "TITLE": "Who I Am",
+      "DESCRIPTION1": "I'm a passionate full stack developer with over 5 years of experience creating digital solutions that make a difference. My journey in tech started with a curiosity about how websites work, and it has evolved into a career dedicated to building robust, scalable applications.",
+      "DESCRIPTION2": "I believe in writing clean, maintainable code and creating user experiences that are both functional and delightful. When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.",
+      "DESCRIPTION3": "I specialize in modern web technologies including Angular, React, Node.js, and cloud platforms. I'm always eager to take on new challenges and collaborate with teams to bring innovative ideas to life."
+    },
+    "VALUES": {
+      "TITLE": "My Values",
+      "INNOVATION": {
+        "TITLE": "Innovation",
+        "DESCRIPTION": "Embracing new technologies and creative solutions to solve complex problems."
+      },
+      "QUALITY": {
+        "TITLE": "Quality",
+        "DESCRIPTION": "Delivering high-quality code and exceptional user experiences that stand the test of time."
+      },
+      "COLLABORATION": {
+        "TITLE": "Collaboration",
+        "DESCRIPTION": "Working effectively with teams and clients to achieve shared goals and success."
+      },
+      "GROWTH": {
+        "TITLE": "Continuous Growth",
+        "DESCRIPTION": "Always learning, improving, and staying up-to-date with industry best practices."
+      }
+    },
+    "QUICK_FACTS": {
+      "TITLE": "Quick Facts",
+      "LOCATION": "Location",
+      "EXPERIENCE": "Experience",
+      "PROJECTS": "Projects",
+      "LANGUAGES": "Languages"
+    },
+    "DOWNLOAD_CV": "Download CV"
+  },
+  "SKILLS": {
+    "TITLE": "Skills & Expertise",
+    "SUBTITLE": "A comprehensive overview of my technical skills and areas of expertise",
+    "CATEGORIES": {
+      "FRONTEND": "Frontend Development",
+      "BACKEND": "Backend Development",
+      "DATABASE": "Database",
+      "TOOLS": "Tools & Technologies",
+      "SOFT_SKILLS": "Soft Skills"
+    },
+    "CERTIFICATIONS": {
+      "TITLE": "Certifications",
+      "CERT1": {
+        "TITLE": "AWS Certified Developer",
+        "ISSUER": "Amazon Web Services",
+        "DATE": "Issued January 2023"
+      }
+    }
+  },
+  "PROJECTS": {
+    "TITLE": "My Projects",
+    "SUBTITLE": "A showcase of my recent work and personal projects",
+    "FEATURED": "Featured",
+    "LOAD_MORE": "Load More"
+  },
+  "CONTACT": {
+    "TITLE": "Get In Touch",
+    "SUBTITLE": "Let's discuss your project and see how we can work together",
+    "GET_IN_TOUCH": {
+      "TITLE": "Get In Touch",
+      "EMAIL": {
+        "TITLE": "Email"
+      },
+      "PHONE": {
+        "TITLE": "Phone"
+      },
+      "LOCATION": {
+        "TITLE": "Location"
+      }
+    },
+    "SOCIAL": {
+      "TITLE": "Follow Me"
+    },
+    "FORM": {
+      "TITLE": "Send Me a Message",
+      "SUCCESS_MESSAGE": "Your message has been sent successfully! I'll get back to you soon.",
+      "ERROR_MESSAGES": {
+        "REQUIRED": "This field is required",
+        "EMAIL": "Please enter a valid email address",
+        "MIN_LENGTH": "This field must be at least {{length}} characters long",
+        "MAX_LENGTH": "This field cannot be longer than {{length}} characters"
+      },
+      "NAME": {
+        "LABEL": "Full Name",
+        "PLACEHOLDER": "Enter your full name",
+        "ERROR": "Please enter your name"
+      },
+      "EMAIL": {
+        "LABEL": "Email Address",
+        "PLACEHOLDER": "Enter your email address",
+        "ERROR": {
+          "REQUIRED": "Email is required",
+          "INVALID": "Please enter a valid email address"
+        }
+      },
+      "SUBJECT": {
+        "LABEL": "Subject",
+        "PLACEHOLDER": "What's this about?",
+        "ERROR": "Please enter a subject"
+      },
+      "MESSAGE": {
+        "LABEL": "Your Message",
+        "PLACEHOLDER": "Tell me about your project...",
+        "ERROR": "Please enter a message (at least 10 characters)"
+      },
+      "SUBMIT": "Send Message",
+      "SENDING": "Sending..."
+    }
+  }
+}

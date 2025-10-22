@@ -1,0 +1,156 @@
+{
+  "NAV": {
+    "HOME": "Accueil",
+    "ABOUT": "À Propos",
+    "SKILLS": "Compétences",
+    "PROJECTS": "Projets",
+    "CONTACT": "Contact"
+  },
+  "FOOTER": {
+    "DESCRIPTION": "Création d'applications web modernes avec passion et précision.",
+    "QUICK_LINKS": "Liens Rapides",
+    "CONNECT": "Se Connecter",
+    "RIGHTS": "Tous droits réservés."
+  },
+  "HOME": {
+    "TITLE": "Salut, je suis Muhammad Shahid Iqbal",
+    "SUBTITLE": "Développeur Full Stack passionné par la création de solutions web innovantes",
+    "VIEW_WORK": "Voir Mon Travail",
+    "GET_IN_TOUCH": "Me Contacter",
+    "LEARN_MORE": "En Savoir Plus",
+    "VIEW_PROJECT": "Voir le Projet",
+    "VIEW_ALL_PROJECTS": "Voir Tous les Projets",
+    "VIEW_ALL_SKILLS": "Voir Toutes les Compétences",
+    "ABOUT_PREVIEW": {
+      "TITLE": "À Propos de Moi",
+      "DESCRIPTION": "Je suis un développeur full stack passionné avec plus de 5 ans d'expérience dans la création d'applications web modernes. J'aime transformer des problèmes complexes en designs simples et beaux."
+    },
+    "STATS": {
+      "YEARS": "Années d'Expérience",
+      "PROJECTS": "Projets Terminés",
+      "TECHNOLOGIES": "Technologies Maîtrisées",
+      "DEDICATION": "Satisfaction Client"
+    },
+    "FEATURED_PROJECTS": {
+      "TITLE": "Projets en Vedette",
+      "DESCRIPTION": "Voici quelques-uns de mes projets récents qui mettent en valeur mes compétences et ma passion pour le développement.",
+      "PROJECT1": {
+        "TITLE": "Plateforme E-Commerce",
+        "DESCRIPTION": "Une plateforme e-commerce complète avec un design moderne et une expérience utilisateur fluide."
+      }
+    },
+    "SKILLS_PREVIEW": {
+      "TITLE": "Compétences Techniques",
+      "DESCRIPTION": "Je travaille avec une variété de technologies pour donner vie aux idées."
+    }
+  },
+  "ABOUT": {
+    "TITLE": "À Propos de Moi",
+    "SUBTITLE": "Découvrez mon parcours, mes valeurs et ce qui me motive en tant que développeur",
+    "WHO_I_AM": {
+      "TITLE": "Qui Je Suis",
+      "DESCRIPTION1": "Je suis un développeur full stack passionné avec plus de 5 ans d'expérience dans la création de solutions numériques qui font la différence. Mon parcours dans la tech a commencé par une curiosité sur le fonctionnement des sites web, et il a évolué vers une carrière dédiée à la construction d'applications robustes et évolutives.",
+      "DESCRIPTION2": "Je crois en l'écriture de code propre et maintenable et en la création d'expériences utilisateur à la fois fonctionnelles et agréables. Quand je ne code pas, vous pouvez me trouver en train d'explorer de nouvelles technologies, de contribuer à des projets open source ou de partager mes connaissances avec la communauté des développeurs.",
+      "DESCRIPTION3": "Je me spécialise dans les technologies web modernes incluant Angular, React, Node.js et les plateformes cloud. Je suis toujours impatient de relever de nouveaux défis et de collaborer avec des équipes pour donner vie à des idées innovantes."
+    },
+    "VALUES": {
+      "TITLE": "Mes Valeurs",
+      "INNOVATION": {
+        "TITLE": "Innovation",
+        "DESCRIPTION": "Adopter de nouvelles technologies et des solutions créatives pour résoudre des problèmes complexes."
+      },
+      "QUALITY": {
+        "TITLE": "Qualité",
+        "DESCRIPTION": "Fournir du code de haute qualité et des expériences utilisateur exceptionnelles qui résistent à l'épreuve du temps."
+      },
+      "COLLABORATION": {
+        "TITLE": "Collaboration",
+        "DESCRIPTION": "Travailler efficacement avec les équipes et les clients pour atteindre des objectifs et un succès partagés."
+      },
+      "GROWTH": {
+        "TITLE": "Croissance Continue",
+        "DESCRIPTION": "Toujours apprendre, s'améliorer et rester à jour avec les meilleures pratiques de l'industrie."
+      }
+    },
+    "QUICK_FACTS": {
+      "TITLE": "Faits Rapides",
+      "LOCATION": "Localisation",
+      "EXPERIENCE": "Expérience",
+      "PROJECTS": "Projets",
+      "LANGUAGES": "Langues"
+    },
+    "DOWNLOAD_CV": "Télécharger CV"
+  },
+  "SKILLS": {
+    "TITLE": "Compétences et Expertise",
+    "SUBTITLE": "Un aperçu complet de mes compétences techniques et domaines d'expertise",
+    "CATEGORIES": {
+      "FRONTEND": "Développement Frontend",
+      "BACKEND": "Développement Backend",
+      "DATABASE": "Base de Données",
+      "TOOLS": "Outils et Technologies",
+      "SOFT_SKILLS": "Compétences Douces"
+    },
+    "CERTIFICATIONS": {
+      "TITLE": "Certifications",
+      "CERT1": {
+        "TITLE": "Développeur Certifié AWS",
+        "ISSUER": "Amazon Web Services",
+        "DATE": "Délivré en Janvier 2023"
+      }
+    }
+  },
+  "PROJECTS": {
+    "TITLE": "Mes Projets",
+    "SUBTITLE": "Une vitrine de mes travaux récents et projets personnels",
+    "FEATURED": "En Vedette",
+    "LOAD_MORE": "Charger Plus"
+  },
+  "CONTACT": {
+    "TITLE": "Me Contacter",
+    "SUBTITLE": "Discutons de votre projet et voyons comment nous pouvons travailler ensemble",
+    "GET_IN_TOUCH": {
+      "TITLE": "Me Contacter",
+      "EMAIL": {
+        "TITLE": "Email"
+      },
+      "PHONE": {
+        "TITLE": "Téléphone"
+      },
+      "LOCATION": {
+        "TITLE": "Localisation"
+      }
+    },
+    "SOCIAL": {
+      "TITLE": "Me Suivre"
+    },
+    "FORM": {
+      "TITLE": "M'Envoyer un Message",
+      "NAME": {
+        "LABEL": "Nom",
+        "PLACEHOLDER": "Votre nom complet",
+        "ERROR": "Le nom est requis"
+      },
+      "EMAIL": {
+        "LABEL": "Email",
+        "PLACEHOLDER": "votre.email@exemple.com",
+        "ERROR": {
+          "REQUIRED": "L'email est requis",
+          "INVALID": "Veuillez entrer une adresse email valide"
+        }
+      },
+      "SUBJECT": {
+        "LABEL": "Sujet",
+        "PLACEHOLDER": "De quoi s'agit-il ?",
+        "ERROR": "Le sujet est requis"
+      },
+      "MESSAGE": {
+        "LABEL": "Message",
+        "PLACEHOLDER": "Parlez-moi de votre projet...",
+        "ERROR": "Le message doit contenir au moins 10 caractères"
+      },
+      "SUBMIT": "Envoyer le Message",
+      "SENDING": "Envoi en cours..."
+    }
+  }
+}

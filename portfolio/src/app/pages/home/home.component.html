@@ -1,0 +1,164 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+      <!-- Hero Section -->
+      <section class="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center">
+            <div class="animate-fade-in">
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                {{ 'HOME.TITLE' | translate }}
+              </h1>
+              <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                {{ 'HOME.SUBTITLE' | translate }}
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a routerLink="/projects"
+                   class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                  {{ 'HOME.VIEW_WORK' | translate }}
+                </a>
+                <a routerLink="/contact"
+                   class="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                  {{ 'HOME.GET_IN_TOUCH' | translate }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <svg class="w-6 h-6 text-gray-600 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </section>
+
+      <!-- About Preview -->
+      <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="animate-slide-in">
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+                {{ 'HOME.ABOUT_PREVIEW.TITLE' | translate }}
+              </h2>
+              <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                {{ 'HOME.ABOUT_PREVIEW.DESCRIPTION' | translate }}
+              </p>
+              <a routerLink="/about"
+                 class="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
+                {{ 'HOME.LEARN_MORE' | translate }}
+                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="animate-slide-in" style="animation-delay: 0.2s">
+              <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-8">
+                <div class="grid grid-cols-2 gap-6">
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">5+</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-300">{{ 'HOME.STATS.YEARS' | translate }}</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">50+</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-300">{{ 'HOME.STATS.PROJECTS' | translate }}</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">10+</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-300">{{ 'HOME.STATS.TECHNOLOGIES' | translate }}</div>
+                  </div>
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">100%</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-300">{{ 'HOME.STATS.DEDICATION' | translate }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              {{ 'HOME.FEATURED_PROJECTS.TITLE' | translate }}
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              {{ 'HOME.FEATURED_PROJECTS.DESCRIPTION' | translate }}
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project cards would go here -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden animate-fade-in">
+              <div class="h-48 bg-gray-300 dark:bg-gray-600"></div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  {{ 'HOME.FEATURED_PROJECTS.PROJECT1.TITLE' | translate }}
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  {{ 'HOME.FEATURED_PROJECTS.PROJECT1.DESCRIPTION' | translate }}
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded">
+                    Angular
+                  </span>
+                  <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded">
+                    TypeScript
+                  </span>
+                </div>
+                <a routerLink="/projects"
+                   class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium">
+                  {{ 'HOME.VIEW_PROJECT' | translate }}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-8">
+            <a routerLink="/projects"
+               class="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+              {{ 'HOME.VIEW_ALL_PROJECTS' | translate }}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Preview -->
+      <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              {{ 'HOME.SKILLS_PREVIEW.TITLE' | translate }}
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              {{ 'HOME.SKILLS_PREVIEW.DESCRIPTION' | translate }}
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <!-- Skill icons would go here -->
+            <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow animate-fade-in">
+              <div class="text-4xl text-blue-600 dark:text-blue-400 mb-2">⚡</div>
+              <div class="text-sm font-medium text-gray-900 dark:text-white">Angular</div>
+            </div>
+            <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow animate-fade-in" style="animation-delay: 0.1s">
+              <div class="text-4xl text-green-600 dark:text-green-400 mb-2">🟢</div>
+              <div class="text-sm font-medium text-gray-900 dark:text-white">Node.js</div>
+            </div>
+            <div class="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow animate-fade-in" style="animation-delay: 0.2s">
+              <div class="text-4xl text-purple-600 dark:text-purple-400 mb-2">⚛️</div>
+              <div class="text-sm font-medium text-gray-900 dark:text-white">React</div>
+            </div>
+          </div>
+
+          <div class="text-center mt-8">
+            <a routerLink="/skills"
+               class="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+              {{ 'HOME.VIEW_ALL_SKILLS' | translate }}
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>

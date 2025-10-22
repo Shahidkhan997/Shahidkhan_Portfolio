@@ -1,0 +1,150 @@
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        {{ 'SKILLS.TITLE' | translate }}
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        {{ 'SKILLS.SUBTITLE' | translate }}
+      </p>
+    </div>
+
+    <!-- Skills Categories -->
+    <div class="space-y-12">
+      <!-- Frontend Development -->
+      <div class="animate-fade-in">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
+          <span class="mr-3">💻</span>
+          {{ 'SKILLS.CATEGORIES.FRONTEND' | translate }}
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div *ngFor="let skill of frontendSkills"
+               class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-gray-900 dark:text-white">{{ skill.name }}</h3>
+              <span class="text-sm text-gray-600 dark:text-gray-300">{{ skill.level }}%</span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div class="bg-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                   [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend Development -->
+      <div class="animate-fade-in" style="animation-delay: 0.2s">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
+          <span class="mr-3">⚙️</span>
+          {{ 'SKILLS.CATEGORIES.BACKEND' | translate }}
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div *ngFor="let skill of backendSkills"
+               class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-gray-900 dark:text-white">{{ skill.name }}</h3>
+              <span class="text-sm text-gray-600 dark:text-gray-300">{{ skill.level }}%</span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div class="bg-green-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                   [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database -->
+      <div class="animate-fade-in" style="animation-delay: 0.4s">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
+          <span class="mr-3">🗄️</span>
+          {{ 'SKILLS.CATEGORIES.DATABASE' | translate }}
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div *ngFor="let skill of databaseSkills"
+               class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-gray-900 dark:text-white">{{ skill.name }}</h3>
+              <span class="text-sm text-gray-600 dark:text-gray-300">{{ skill.level }}%</span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div class="bg-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                   [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Technologies -->
+      <div class="animate-fade-in" style="animation-delay: 0.6s">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
+          <span class="mr-3">🔧</span>
+          {{ 'SKILLS.CATEGORIES.TOOLS' | translate }}
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div *ngFor="let skill of toolsSkills"
+               class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-gray-900 dark:text-white">{{ skill.name }}</h3>
+              <span class="text-sm text-gray-600 dark:text-gray-300">{{ skill.level }}%</span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div class="bg-orange-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                   [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="animate-fade-in" style="animation-delay: 0.8s">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
+          <span class="mr-3">🤝</span>
+          {{ 'SKILLS.CATEGORIES.SOFT_SKILLS' | translate }}
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div *ngFor="let skill of softSkills"
+               class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-semibold text-gray-900 dark:text-white">{{ skill.name }}</h3>
+              <span class="text-sm text-gray-600 dark:text-gray-300">{{ skill.level }}%</span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div class="bg-pink-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                   [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="mt-16 animate-fade-in" style="animation-delay: 1s">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        {{ 'SKILLS.CERTIFICATIONS.TITLE' | translate }}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 dark:text-white">
+                {{ 'SKILLS.CERTIFICATIONS.CERT1.TITLE' | translate }}
+              </h3>
+              <p class="text-sm text-gray-600 dark:text-gray-300">
+                {{ 'SKILLS.CERTIFICATIONS.CERT1.ISSUER' | translate }}
+              </p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300">
+            {{ 'SKILLS.CERTIFICATIONS.CERT1.DATE' | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

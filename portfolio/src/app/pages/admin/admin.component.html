@@ -1,0 +1,205 @@
+<!-- Login Prompt for non-authenticated users -->
+<div class="login-prompt" *ngIf="!isAuthenticated">
+  <div class="login-prompt-content">
+    <h3>Admin Access</h3>
+    <p>Enter admin password to access the admin panel</p>
+    <input type="password" [(ngModel)]="adminPassword" placeholder="Admin Password" (keyup.enter)="login()"
+      class="form-control">
+    <div class="login-prompt-actions">
+      <button class="btn btn-primary" (click)="login()">Login</button>
+    </div>
+  </div>
+</div>
+
+<!-- Main Admin Panel -->
+<div class="admin-panel" *ngIf="isAuthenticated">
+  <div class="admin-header">
+    <h2>Admin Panel</h2>
+    <button class="btn btn-secondary logout-btn" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <div class="admin-tabs">
+    <button class="tab-btn" [class.active]="activeTab === 'messages'" (click)="activeTab = 'messages'">
+      <i class="fas fa-envelope"></i> Messages
+      <span class="badge" *ngIf="stats?.total">{{ stats?.total }}</span>
+    </button>
+    <button class="tab-btn" [class.active]="activeTab === 'cv'" (click)="activeTab = 'cv'">
+      <i class="fas fa-file-alt"></i> CV Management
+    </button>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="tab-content">
+      <!-- CV Management Tab -->
+    <div *ngIf="activeTab === 'cv'" class="tab-pane">
+      <app-cv-management></app-cv-management>
+    </div>
+    <!-- Messages Tab -->
+    <div *ngIf="activeTab === 'messages'" class="tab-pane">
+      <!-- Error Message -->
+      <div class="alert alert-danger" *ngIf="error">
+        <i class="fas fa-exclamation-circle"></i> {{ error }}
+      </div>
+
+      <!-- Statistics Cards -->
+      <div class="stats-cards" *ngIf="stats">
+        <div class="stat-card">
+          <h3>{{ stats.total }}</h3>
+          <p>Total Messages</p>
+        </div>
+        <div class="stat-card">
+          <h3>{{ stats.byStatus.new || 0 }}</h3>
+          <p>New Messages</p>
+        </div>
+        <div class="stat-card">
+          <h3>{{ stats.byStatus.read || 0 }}</h3>
+          <p>Read Messages</p>
+        </div>
+        <div class="stat-card">
+          <h3>{{ stats.byStatus.replied || 0 }}</h3>
+          <p>Replied Messages</p>
+        </div>
+        <div class="stat-card">
+          <h3>{{ stats.byStatus.archived || 0 }}</h3>
+          <p>Archived Messages</p>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters-section">
+        <div class="filter-group">
+          <label for="statusFilter">Filter by Status:</label>
+          <select id="statusFilter" [(ngModel)]="statusFilter" (change)="onStatusFilterChange()" class="form-control">
+            <option value="">All Statuses</option>
+            <option value="new">New</option>
+            <option value="read">Read</option>
+            <option value="replied">Replied</option>
+            <option value="archived">Archived</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="searchQuery">Search:</label>
+          <input id="searchQuery" type="text" [(ngModel)]="searchQuery" (input)="onSearchChange()"
+            placeholder="Search by name, email, subject, or message..." class="form-control">
+        </div>
+
+        <button class="btn btn-secondary" (click)="clearFilters()">Clear Filters</button>
+      </div>
+
+      <!-- Loading Indicator -->
+      <div class="loading" *ngIf="loading">
+        <p>Loading messages...</p>
+      </div>
+
+      <!-- Messages Table -->
+      <div class="messages-section" *ngIf="!loading">
+        <div class="table-container">
+          <table class="message-table">
+            <thead class="table-header">
+              <tr>
+                <th class="name-column">Name</th>
+                <th class="email-column">Email</th>
+                <th class="subject-column">Subject</th>
+                <th class="message-column">Message</th>
+                <th class="status-column">Status</th>
+                <th class="date-column">Date</th>
+                <th class="actions-column">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let message of messages" class="message-row">
+                <td class="name-cell">{{ message.name }}</td>
+                <td class="email-cell">
+                  <a [href]="'mailto:' + message.email" class="email-link">{{ message.email }}</a>
+                </td>
+                <td class="subject-cell" [title]="message.subject">{{ message.subject }}</td>
+                <td class="message-cell">
+                  <div class="message-content" [title]="message.message">
+                    {{ truncateMessage(message.message, 120) }}
+                  </div>
+                </td>
+                <td class="status-cell">
+                  <span class="status-badge" [ngClass]="getStatusClass(message.status)">
+                    {{ message.status | titlecase }}
+                  </span>
+                </td>
+                <td class="date-cell">
+                  <div class="date-content">
+                    <div class="date-main">{{ formatDate(message.createdAt) | date:'shortDate' }}</div>
+                    <div class="date-sub">{{ formatDate(message.createdAt) | date:'shortTime' }}</div>
+                  </div>
+                </td>
+                <td class="actions-cell">
+                  <div class="action-buttons">
+                    <button class="action-btn read-btn" [class.active]="message.status === 'read'"
+                      (click)="markAsRead(message)" [disabled]="message.status === 'read'" title="Mark as Read">
+                      <svg class="btn-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      Read
+                    </button>
+                    <button class="action-btn reply-btn" [class.active]="message.status === 'replied'"
+                      (click)="markAsReplied(message)" [disabled]="message.status === 'replied'"
+                      title="Mark as Replied">
+                      <svg class="btn-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd"
+                          d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      Reply
+                    </button>
+                    <button class="action-btn archive-btn" [class.active]="message.status === 'archived'"
+                      (click)="archiveMessage(message)" [disabled]="message.status === 'archived'" title="Archive">
+                      <svg class="btn-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                          d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z">
+                        </path>
+                      </svg>
+                      Archive
+                    </button>
+                    <button class="action-btn delete-btn" (click)="deleteMessage(message)" title="Delete">
+                      <svg class="btn-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" clip-rule="evenodd"></path>
+                        <path fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                      Delete
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr *ngIf="messages.length === 0" class="empty-row">
+                <td colspan="7" class="text-center">No messages found</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-section" *ngIf="totalPages > 1">
+          <div class="pagination-info">
+            Showing {{ ((currentPage - 1) * pageSize) + 1 }} - {{ endRange }} of {{ totalMessages }} messages
+          </div>
+          <div class="pagination-controls">
+            <button class="btn btn-sm btn-outline-primary" (click)="prevPage()" [disabled]="currentPage === 1">
+              Previous
+            </button>
+
+            <span class="page-info">
+              Page {{ currentPage }} of {{ totalPages }}
+            </span>
+
+            <button class="btn btn-sm btn-outline-primary" (click)="nextPage()" [disabled]="currentPage === totalPages">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

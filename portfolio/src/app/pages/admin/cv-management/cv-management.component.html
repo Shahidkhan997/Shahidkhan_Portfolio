@@ -1,0 +1,75 @@
+<div class="cv-management">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">CV Management</h2>
+      <p class="card-subtitle">Upload or update your CV file</p>
+    </div>
+    
+    <div class="card-body">
+      <!-- Current CV Section -->
+      <div class="current-cv" *ngIf="currentCv">
+        <h3>Current CV</h3>
+        <div class="cv-info">
+          <i class="fas fa-file-pdf"></i>
+          <span class="cv-name">{{ currentCv.name }}</span>
+          <div class="cv-actions">
+            <a [href]="currentCv.url" download class="btn btn-sm btn-primary">
+              <i class="fas fa-download"></i> Download
+            </a>
+            <button (click)="deleteCv()" class="btn btn-sm btn-danger" [disabled]="isLoading">
+              <i class="fas fa-trash"></i> Delete
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload Section -->
+      <div class="upload-section">
+        <h3>{{ currentCv ? 'Update CV' : 'Upload CV' }}</h3>
+        
+        <div class="upload-zone" ngx-dropzone (change)="onFileSelected($event)" (addedFiles)="onDrop($event)">
+          <div class="dropzone-content">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag & drop your CV file here, or click to browse</p>
+            <p class="file-types">Accepted file types: .pdf, .doc, .docx (Max: 5MB)</p>
+          </div>
+        </div>
+
+        <div class="selected-file" *ngIf="cvForm.get('cvFile')?.value">
+          <i class="fas fa-file-alt"></i>
+          <span class="file-name">{{ cvForm.get('cvFile')?.value?.name }}</span>
+          <button type="button" class="btn-remove" (click)="cvForm.patchValue({ cvFile: null })">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="progress-container" *ngIf="uploadProgress !== null">
+          <div class="progress">
+            <div class="progress-bar" [style.width.%]="uploadProgress"></div>
+          </div>
+          <span class="progress-text">{{ uploadProgress }}%</span>
+        </div>
+
+        <div class="form-actions">
+          <button 
+            type="button" 
+            class="btn btn-primary" 
+            (click)="uploadCv()" 
+            [disabled]="!cvForm.valid || isLoading"
+          >
+            <i class="fas fa-upload"></i> {{ currentCv ? 'Update CV' : 'Upload CV' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Messages -->
+      <div class="alert alert-success" *ngIf="success">
+        <i class="fas fa-check-circle"></i> {{ success }}
+      </div>
+      
+      <div class="alert alert-danger" *ngIf="error">
+        <i class="fas fa-exclamation-circle"></i> {{ error }}
+      </div>
+    </div>
+  </div>
+</div>

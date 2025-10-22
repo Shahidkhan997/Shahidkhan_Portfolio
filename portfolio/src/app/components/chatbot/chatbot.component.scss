@@ -1,0 +1,116 @@
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-family: inherit;
+}
+
+.chat-toggle-btn {
+  @apply fixed bottom-5 right-5 w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-105;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+}
+
+.chat-toggle-btn.open {
+  @apply bg-red-600 hover:bg-red-700;
+}
+
+.chat-window {
+  @apply fixed bottom-20 right-5 w-80 h-96 bg-white dark:bg-gray-800 rounded-lg shadow-2xl flex flex-col opacity-0 pointer-events-none transform translate-y-4 transition-all duration-300;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chat-window.open {
+  @apply opacity-100 pointer-events-auto translate-y-0;
+}
+
+.chat-header {
+  @apply p-4 bg-blue-600 text-white rounded-t-lg;
+}
+
+.chat-header h3 {
+  @apply m-0 text-lg font-semibold;
+}
+
+.chat-messages {
+  @apply flex-1 p-4 overflow-y-auto bg-gray-50 dark:bg-gray-700;
+  max-height: 280px;
+  scroll-behavior: smooth;
+}
+
+.message {
+  @apply mb-4 flex;
+}
+
+.user-message {
+  @apply justify-end;
+}
+
+.bot-message {
+  @apply justify-start;
+}
+
+.message-content {
+  @apply max-w-xs px-3 py-2 rounded-lg text-sm;
+  word-wrap: break-word;
+}
+
+.user-message .message-content {
+  @apply bg-blue-600 text-white;
+}
+
+.bot-message .message-content {
+  @apply bg-white dark:bg-gray-600 text-gray-800 dark:text-gray-200 border;
+}
+
+.message-time {
+  @apply text-xs text-gray-500 mt-1 px-2;
+}
+
+.typing .message-content {
+  @apply flex items-center space-x-1;
+}
+
+.typing-dots {
+  @apply flex space-x-1;
+}
+
+.typing-dots span {
+  @apply w-2 h-2 bg-gray-500 rounded-full animate-bounce;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.chat-input-container {
+  @apply p-4 bg-white dark:bg-gray-800 border-t flex items-center space-x-2 rounded-b-lg;
+}
+
+.chat-input {
+  @apply flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm;
+}
+
+.send-btn {
+  @apply w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.send-btn:disabled {
+  @apply bg-gray-400 cursor-not-allowed;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .chat-window {
+    @apply w-72 h-80 right-2 bottom-16;
+  }
+
+  .chat-toggle-btn {
+    @apply bottom-4 right-4 w-12 h-12;
+  }
+}
